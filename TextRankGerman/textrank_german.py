@@ -7,6 +7,12 @@ import nltk
 import nltk.tokenize
 from HanTa import HanoverTagger as ht
 
+try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
+    print("Downloading punkt...")
+    nltk.download('punkt')
+
 sys.path.append(".")
 
 import pagerank
